@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--configuration标签是mybatis配置文件的根标签-->
+<configuration>
+    <properties resource="config/dbconfig.properties"></properties>
+    <settings>
+        <!-- 开启驼峰命名规则 自动把数据库中的属性去掉下划线与Java对象进行关联 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <typeAliases>
+        <!--方式二，统一设置
+        在没有注解@Alias()的情况下，会使用 Bean 的首字母小写的非限定类名来作为它的别名。
+        比如 domain.blog.Author 的别名为 author；若有注解，则别名为其注解值-->
+        <package name="com.zlybl.pojo"/>
+    </typeAliases>
+    <!--mybatis环境 default属性指定一个环境-->
+    <environments default="development">
+        <!--id属性 自定义环境的唯一标识符-->
+        <environment id="development">
+            <!--指定使用jdbc事务管理-->
+            <transactionManager type="JDBC"/>
+            <!--使用mybatis内部带链接池功能的数据源-->
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--映射器，映射器的XML文件包含了sql代码和映射定义信息-->
+    <mappers>
+        <mapper resource="mapper/BookMapper.xml"/>
+    </mappers>
+</configuration>

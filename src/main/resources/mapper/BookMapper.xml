@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--映射器配置文件-->
+<!--namespace是用来关联接口的-->
+<mapper namespace="com.zlybl.mapper.BookMapper">
+    <!--下面是我们要编写的sql语句-->
+    <!--全查-->
+    <select id="selectAll" resultType="Book">
+        select * from book;
+    </select>
+</mapper>
