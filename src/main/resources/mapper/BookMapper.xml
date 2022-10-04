@@ -10,6 +10,11 @@
     <select id="selectAll" resultType="Book">
         select * from book;
     </select>
+
+    <insert id="addBook">
+        insert into book(bname,author,price,press,saletime) values (#{bname},#{author},#{price},#{press},#{saletime})
+    </insert>
+
     <!--删除-->
     <delete id="deleteBook">
         delete from book where id=#{id}
