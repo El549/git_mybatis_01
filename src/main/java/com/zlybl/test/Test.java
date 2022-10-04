@@ -46,6 +46,15 @@ public class Test {
                     break;
                 case 2:
                 case 3:
+                    System.out.println("请输入需要删除的id号");
+                    Integer id = scan.nextInt();
+                    int x = mapper.deleteBook(id);
+                    if (x > 0){
+                        System.out.println("删除成功");
+                    }else {
+                        System.out.println("删除失败");
+                    }
+                    break;
                 case 4:
                     System.out.println("还未开发");
                     break;
