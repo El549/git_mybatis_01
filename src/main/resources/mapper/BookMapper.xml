@@ -10,4 +10,8 @@
     <select id="selectAll" resultType="Book">
         select * from book;
     </select>
+    <!--删除-->
+    <delete id="deleteBook">
+        delete from book where id=#{id}
+    </delete>
 </mapper>

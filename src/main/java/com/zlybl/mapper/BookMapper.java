@@ -7,4 +7,6 @@ import java.util.List;
 public interface BookMapper {
     //全查书
     List<Book> selectAll();
+    //删除
+    int deleteBook(Integer id);
 }
