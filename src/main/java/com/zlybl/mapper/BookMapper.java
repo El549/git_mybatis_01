@@ -11,4 +11,6 @@ public interface BookMapper {
     int addBook(Book book);
 
 
+    int deleteBook(Integer id);
+
 }
